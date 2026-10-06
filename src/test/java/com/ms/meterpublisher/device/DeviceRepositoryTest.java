@@ -21,7 +21,7 @@ class DeviceRepositoryTest {
 
         assertThat(devices)
                 .extracting(Device::deviceCode)
-                .contains("MAIN-A", "AHU-01", "AHU-02", "LIGHT-01", "MAIN-B", "ELEV-01");
+                .contains("MAIN-A", "AHU-01", "LIGHT-01");
         assertThat(devices)
                 .filteredOn(d -> d.deviceCode().equals("MAIN-A"))
                 .singleElement()

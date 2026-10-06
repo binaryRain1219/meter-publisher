@@ -1,10 +1,17 @@
 package com.ms.meterpublisher.message;
 
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
+import java.time.OffsetDateTime;
+import java.util.List;
 
 public record MeterReading(
-        String deviceId,
-        double cumulativeKwh,
-        LocalDateTime measuerdAt
+        String deviceCode,
+        OffsetDateTime measuredAt,
+        BigDecimal cumulativeKwh,
+        BigDecimal instantKw,
+        long seq,
+        MeterStatus meterStatus,
+        List<String> errorCodes,
+        RunState runState
 ) {
 }

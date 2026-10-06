@@ -18,7 +18,7 @@ CREATE TABLE building (
 CREATE TABLE device (
     deviceId    BIGINT       NOT NULL AUTO_INCREMENT,
     buildingId  BIGINT       NOT NULL,
-    deviceCode  VARCHAR(30)  NOT NULL COMMENT 'MQTT 메시지의 meterId (예: AHU-01)',
+    deviceCode  VARCHAR(30)  NOT NULL COMMENT 'MQTT 메시지의 deviceCode (예: AHU-01)',
     name        VARCHAR(100) NOT NULL COMMENT '공조기 1호',
     category    VARCHAR(20)  NOT NULL COMMENT '수전반/공조/조명 등',
     isMain      TINYINT(1)   NOT NULL DEFAULT 0 COMMENT '건물 전체를 재는 메인 계량기 여부',
