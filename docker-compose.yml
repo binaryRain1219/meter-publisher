@@ -23,5 +23,17 @@ services:
       timeout: 3s
       retries: 20
 
+  activemq:
+    image: apache/activemq-classic:6.2.0
+    container_name: meter-activemq
+    environment:
+      TZ: Asia/Seoul
+    ports:
+      - "1883:1883"   # MQTT
+      - "8161:8161"   # 웹 콘솔 (admin/admin)
+    volumes:
+      - meter-activemq-data:/opt/apache-activemq/data
+
 volumes:
   meter-mysql-data:
+  meter-activemq-data:
